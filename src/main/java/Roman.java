@@ -1,20 +1,17 @@
 
-public class Roman {
 
-    protected static String changeRomanNumb(String enter) {
+class Roman {
 
-        enter = enter.toUpperCase();
-        String[] temp = enter.split(" ");
+    protected static String changeRomanNumb(String numberOne, String numberTwo, String operation) {
 
-            int a = Integer.parseInt(String.valueOf(RomanNamberEnum.valueOf(temp[0])));
-            String operation = temp[1];
-            int b = Integer.parseInt(String.valueOf(RomanNamberEnum.valueOf(temp[2])));
+        int romanNumberOne = Integer.parseInt(String.valueOf(RomanNamberEnum.valueOf(numberOne)));
+        int romanNumberTwo = Integer.parseInt(String.valueOf(RomanNamberEnum.valueOf(numberTwo)));
 
-            if (ArithmeticOperations.rez(a,b,operation)<=0){
-                return "throws Exception // in the Roman system there is no zero and negative numbers";
-            }else {
-                return  ConvertArabicToRoman.convertArabicToRoman(ArithmeticOperations.rez(a,b,operation));
-            }
-
+        if (Integer.parseInt(ArithmeticOperations.rez(romanNumberOne, romanNumberTwo, operation)) <= 0) {
+            return "throws Exception // in the Roman system there is no zero and negative numbers";
+        } else {
+            return ConvertArabicToRoman.convertArabicToRoman(Integer.parseInt(ArithmeticOperations.rez(romanNumberOne, romanNumberTwo, operation)));
+        }
     }
 }
+
