@@ -1,14 +1,12 @@
 
-public class Arabic {
+class Arabic {
 
-    protected static int changeArabikNumbA(String enter) {
+    protected static String changeArabikNumbA(String numberOne, String numberTwo, String operation) {
 
-        String[] temp=enter.split(" ");
+        int arabicNumberOne = Integer.parseInt(numberOne);
+        int arabicNumberTwo = Integer.parseInt(numberTwo);
 
-        int a= Integer.parseInt(temp[0]);
-        String operation=temp[1];
-        int b= Integer.parseInt(temp[2]);
-
-        return ArithmeticOperations.rez(a, b, operation);
+        return ArithmeticOperations.rez(arabicNumberOne, arabicNumberTwo, operation);
     }
 }
+
